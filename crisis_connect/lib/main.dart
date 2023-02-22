@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/HomeScreen.dart';
 
 
 void main() => runApp(const CrisisConnect());
@@ -14,7 +15,7 @@ class CrisisConnect extends StatelessWidget {
         body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: HomePage(title: 'HomePage',),
+            child: HomeScreen(title: 'Home',),
           ),
         ),
       ),
@@ -22,18 +23,3 @@ class CrisisConnect extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-      ),
-      body: const Center(
-          child: Text('Home'),
-      ),
-    );
-  }
-}

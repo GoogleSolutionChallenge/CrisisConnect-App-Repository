@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './screens/HomeScreen.dart';
+import './screens/CreateProfileScreen.dart';
 
 
 void main() => runApp(const CrisisConnect());
@@ -15,7 +16,7 @@ class CrisisConnect extends StatelessWidget {
         body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: HomeScreen(title: 'Home',),
+            child: FormScreen(),
           ),
         ),
       ),

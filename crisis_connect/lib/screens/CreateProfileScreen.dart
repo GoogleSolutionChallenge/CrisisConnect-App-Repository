@@ -308,7 +308,16 @@ class CreateProfile extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Sign Up")),
+      appBar: AppBar(
+        title: Text("Sign Up"),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Handle menu button press
+          },
+        )
+      ),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),

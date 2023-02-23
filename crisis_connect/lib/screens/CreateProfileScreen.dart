@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+// Still need to add Country field
+
 class FormScreen extends StatefulWidget {
 
   const FormScreen({super.key});
@@ -14,11 +16,18 @@ class FormScreen extends StatefulWidget {
 class CreateProfile extends State<FormScreen> {
 
   bool _obscureText = true;
+  // Contact info:
   late String _firstname;
   late String _lastname;
   late String _email;
   late String _password;
   late String _phoneNumber;
+
+  // Emergency contact info:
+  late String _emergencyFirstname;
+  late String _emergencyLastname;
+  late String _emergencyPhoneNumber;
+
   var _controller = TextEditingController();
 
   void _toggle() {
@@ -28,6 +37,12 @@ class CreateProfile extends State<FormScreen> {
   }
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  Widget _header(String title) {
+    return TextField(
+      decoration: InputDecoration(labelText: title),
+    );
+  }
 
   Widget _buildFirstName() {
     return TextFormField(
@@ -104,6 +119,44 @@ class CreateProfile extends State<FormScreen> {
     );
   }
 
+  Widget _buildEmergencyFirstName() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: 'Emergency Contact First Name'),
+      //maxLength: 10,
+      validator: (String? value) {
+        return value==null ||value.isEmpty ? "Emergency Contact First Name can't be empty" : null;
+      },
+      onSaved: (String? value) {
+        _firstname = value!;
+      },
+    );
+  }
+
+  Widget _buildEmergencyLastName() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: 'Emergency Contact Last Name'),
+      //maxLength: 10,
+      validator: (String? value) {
+        return value==null ||value.isEmpty ? "Emergency Contact Last Name can't be empty" : null;
+      },
+      onSaved: (String? value) {
+        _lastname = value!;
+      },
+    );
+  }
+
+  Widget _buildEmergencyPhoneNumber() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: 'Emergency Contact Phone number'),
+      validator: (String? value) {
+        return value==null ||value.isEmpty ? "Emergency Phone number can't be empty" : null;
+      },
+      onSaved: (String? value) {
+        _phoneNumber = value!;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,11 +169,16 @@ class CreateProfile extends State<FormScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                _header('Contact Information'),
                 _buildFirstName(),
                 _buildLastName(),
                 _buildEmail(),
                 _buildPassword(),
                 _buildPhoneNumber(),
+                _header('Emergency Contact Information'),
+                _buildEmergencyFirstName(),
+                _buildEmergencyLastName(),
+                _buildEmergencyPhoneNumber(),
                 SizedBox(height: 100),
                 ElevatedButton(
                   child: Text(

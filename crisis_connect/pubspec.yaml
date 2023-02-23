@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   country_state_city: ^0.1.6
   iso_countries: ^2.2.0
+  firebase_core: ^2.7.0
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,4 @@
-# CrisisConnect-Repository
+# CrisisConnect Application Repository
 
 ## To Do
 ### Backend

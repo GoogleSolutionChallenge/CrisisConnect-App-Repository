@@ -1,6 +1,5 @@
+import 'package:crisis_connect/screens/OnBoardingScreen.dart';
 import 'package:flutter/material.dart';
-import './screens/HomeScreen.dart';
-
 
 void main() => runApp(const CrisisConnect());
 
@@ -10,16 +9,13 @@ class CrisisConnect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: const SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: HomeScreen(title: 'Home',),
-          ),
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      home: const Scaffold(
+        body: SafeArea(
+          child: OnBoardingScreen(),
         ),
       ),
     );
   }
 }
-

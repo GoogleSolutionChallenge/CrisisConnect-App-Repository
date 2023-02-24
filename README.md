@@ -1,16 +1,14 @@
 # CrisisConnect-Repository
 
 ## To Do
-- Make github repository and organization
-- Figma  storyboard
-- Research each of the app functionalities
-- Research videos to use as resources
-- Research about natural disaster response
-- Get familiar with Flutter
-- Figure out how we want the front end to look
-- Register a domain
-- Figure out project name
-- Split up tasks
+### Backend
+- Implement a cloud function for pulling JSON list of active alerts and save the JSON to Firestore database
+- Implement a cloud funtion to cross check the id of each alert and update the database to reflect the most recent list of alerts
+- Implement a cloud function to send alert notifications to users in affected areas
+### Frontend
+- Implement maps features with the Google Maps API
+- Implement weather features with the OpenWeather API
+
 
 ## Ideas
 -   Good Health and Wellbeing: 

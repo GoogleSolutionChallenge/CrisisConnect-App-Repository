@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "633654595881",
+    "project_id": "crisisconnect-2af2b",
+    "storage_bucket": "crisisconnect-2af2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633654595881:android:55a957289a8c6b27c22738",
+        "android_client_info": {
+          "package_name": "com.example.crisis_connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633654595881-8lm2o1s86i9aohvsn7hd69lna0pct202.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxXqKbUztaq00pmd97xUjhxHIFzpPAiGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633654595881-8lm2o1s86i9aohvsn7hd69lna0pct202.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "633654595881-pu7anfddhlf9elin0d0bn0300pf0t8g8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.crisisConnect"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

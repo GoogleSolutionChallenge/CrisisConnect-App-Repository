@@ -1,14 +1,10 @@
 # CrisisConnect Application Repository
 
-## To Do
-### Backend
-- Implement a cloud function for pulling JSON list of active alerts and save the JSON to Firestore database
-- Implement a cloud funtion to cross check the id of each alert and update the database to reflect the most recent list of alerts
-- Implement a cloud function to send alert notifications to users in affected areas
-### Frontend
-- Implement maps features with the Google Maps API
-- Implement weather features with the OpenWeather API
+A natural disaster help and support application that provides critical information and resources to people impacted by natural disasters. Whether it's an earthquake, hurricane, wildfire, or any other natural disaster, the app can provide real-time updates on the situation, emergency contacts, shelter locations, and essential supplies such as food, water, and medical aid.
 
+Moreover, the application also provides support to those affected by natural disasters, including counseling services, financial assistance, and volunteer opportunities. It enables users to connect with others affected by the same natural disaster, share their stories, and offer support to each other.
+
+In short, a natural disaster help and support application can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during these challenging times.
 
 ## Ideas
 -   Good Health and Wellbeing: 

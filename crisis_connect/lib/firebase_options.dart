@@ -43,6 +43,18 @@ class DefaultFirebaseOptions {
     }
   }
 
+FirebaseOptions getFirebaseOptions() {
+  return const FirebaseOptions(
+    apiKey: 'AIzaSyDM0mKW8J3aQnJQnYw1daKZ-tZmT3VfiR0',
+    appId: '1:633654595881:web:dd83556502d10ae5c22738',
+    messagingSenderId: '633654595881',
+    projectId: 'crisisconnect-2af2b',
+    authDomain: 'crisisconnect-2af2b.firebaseapp.com',
+    storageBucket: 'crisisconnect-2af2b.appspot.com',
+    measurementId: 'G-CW4P2W9DH8',
+  );
+}
+
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDM0mKW8J3aQnJQnYw1daKZ-tZmT3VfiR0',
     appId: '1:633654595881:web:dd83556502d10ae5c22738',
@@ -81,4 +93,3 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.crisisConnect',
   );
 }
-

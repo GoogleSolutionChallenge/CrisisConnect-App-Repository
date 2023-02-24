@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
 
-  const FormScreen({super.key});
+  const FormScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -15,23 +16,28 @@ class FormScreen extends StatefulWidget {
 
 class CreateProfile extends State<FormScreen> {
 
+  FirebaseFirestore db = FirebaseFirestore.instance;
+
+  // Get a reference to a collection named "users"
+  late CollectionReference usersRef = db.collection('UserInfo');
+
   bool _obscureText = true;
 
   // Contact info:
-  late String _firstname;
-  late String _lastname;
-  late String _email;
-  late String _password;
-  late String _phoneNumber;
+  String? _firstname;
+  String? _lastname;
+  String? _email;
+  String? _password;
+  String? _phoneNumber;
 
   // Emergency contact info:
-  late String _emergencyFirstname;
-  late String _emergencyLastname;
-  late String _emergencyPhoneNumber;
+  String? _emergencyFirstname;
+  String? _emergencyLastname;
+  String? _emergencyPhoneNumber;
 
   // List of countries:
   late final List<String> _countries = ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia, Plurinational State of', 'Bonaire, Sint Eustatius and Saba', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo, The Democratic Republic of the', 'Cook Islands', 'Costa Rica', "Côte d'Ivoire", 'Croatia', 'Cuba', 'Curaçao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City State)', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran, Islamic Republic of', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', "Korea, Democratic People's Republic of", 'Korea, Republic of', 'Kuwait', 'Kyrgyzstan', "Lao People's Democratic Republic", 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao', 'Macedonia, Republic of', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia, Federated States of', 'Moldova, Republic of', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestinian Territory, Occupied', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Réunion', 'Romania', 'Russian Federation', 'Rwanda', 'Saint Barthélemy', 'Saint Helena, Ascension and Tristan da Cunha', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin (French part)', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Sint Maarten (Dutch part)', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'South Sudan', 'Svalbard and Jan Mayen', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic', 'Taiwan, Province of China', 'Tajikistan', 'Tanzania, United Republic of', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'United States Minor Outlying Islands', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela, Bolivarian Republic of', 'Viet Nam', 'Virgin Islands, British', 'Virgin Islands, U.S.', 'Wallis and Futuna', 'Yemen', 'Zambia', 'Zimbabwe'];
-  late String _country = 'Country';
+  String? _country = 'Country';
 
   final _controller = TextEditingController();
 
@@ -79,7 +85,7 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "First name can't be empty" : null;
             },
-            onSaved: (String? value) {
+            onChanged: (String? value) {
               _firstname = value!;
             },
           ));
@@ -104,7 +110,7 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Last name can't be empty" : null;
             },
-            onSaved: (String? value) {
+            onChanged: (String? value) {
               _lastname = value!;
             },
           ));
@@ -128,7 +134,7 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Email can't be empty" : null;
             },
-            onSaved: (String? value) {
+            onChanged: (String? value) {
               _email = value!;
             },
           ));
@@ -157,7 +163,7 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Password can't be empty" : null;
             },
-            onSaved: (String? value) {
+            onChanged: (String? value) {
               _password = value!;
             },
           ));
@@ -181,7 +187,7 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Phone number can't be empty" : null;
             },
-            onSaved: (String? value) {
+            onChanged: (String? value) {
               _phoneNumber = value!;
             },
           ));
@@ -206,8 +212,8 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Emergency contact first name can't be empty" : null;
             },
-            onSaved: (String? value) {
-              _firstname = value!;
+            onChanged: (String? value) {
+              _emergencyFirstname = value!;
             },
           ));
   }
@@ -230,8 +236,8 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Emergency contact last name can't be empty" : null;
             },
-            onSaved: (String? value) {
-              _lastname = value!;
+            onChanged: (String? value) {
+              _emergencyLastname = value!;
             },
           ));
   }
@@ -253,8 +259,8 @@ class CreateProfile extends State<FormScreen> {
             validator: (String? value) {
               return value==null ||value.isEmpty ? "Emergency phone number can't be empty" : null;
             },
-            onSaved: (String? value) {
-              _phoneNumber = value!;
+            onChanged: (String? value) {
+              _emergencyPhoneNumber = value!;
             },
           )
       );
@@ -273,7 +279,7 @@ class CreateProfile extends State<FormScreen> {
             hint: _country == null
                 ? Text('Country') :
             Text(
-              _country,
+              _country!,
               style: const TextStyle(
                 fontSize: 16,
                 color: Color.fromRGBO(117, 117, 117, 1),
@@ -353,27 +359,26 @@ class CreateProfile extends State<FormScreen> {
                     'Create Account',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
+
                     if (!_formKey.currentState!.validate()) {
                       return;
+                    } else {
+                      Map<String, dynamic> data = {
+                        'first_name': _firstname,
+                        'last_name': _lastname,
+                        'phone_number': _phoneNumber,
+                        'password': _password,
+                        'email': _email,
+                        'country': _country,
+                        'emergency_first_name': _emergencyFirstname,
+                        'emergency_last_name': _emergencyLastname,
+                        'emergency_phone_number': _emergencyPhoneNumber
+                      };
+
+                      await db.collection('UserInfo').add(data);
                     }
                     _formKey.currentState!.save();
-
-                    if (kDebugMode) {
-                      print(_firstname);
-                    }
-                    if (kDebugMode) {
-                      print(_lastname);
-                    }
-                    if (kDebugMode) {
-                      print(_email);
-                    }
-                    if (kDebugMode) {
-                      print(_phoneNumber);
-                    }
-                    if (kDebugMode) {
-                      print(_password);
-                    }
                     //Send to API
                   },
                 )

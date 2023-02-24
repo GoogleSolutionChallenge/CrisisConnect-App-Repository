@@ -29,6 +29,13 @@
             {
               "client_id": "633654595881-8lm2o1s86i9aohvsn7hd69lna0pct202.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "633654595881-pu7anfddhlf9elin0d0bn0300pf0t8g8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.crisisConnect"
+              }
             }
           ]
         }

@@ -5,13 +5,13 @@ import './screens/HomeScreen.dart';
 import './screens/CreateProfileScreen.dart';
 import './screens/EditProfileScreen.dart';
 import 'firebase_options.dart';
+import './screens/MapScreen.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const CrisisConnect());
-
 }
 
 class CrisisConnect extends StatelessWidget {
@@ -25,7 +25,7 @@ class CrisisConnect extends StatelessWidget {
         body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: FormScreen(),
+            child: MapScreen(),
           ),
         ),
       ),

@@ -4,6 +4,10 @@
         android:label="crisis_connect"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyA7guPDiP0D6f8QD-gm-Oxc-mOLVcDpijQ"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

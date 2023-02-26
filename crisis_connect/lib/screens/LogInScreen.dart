@@ -2,14 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LogInScreen extends StatefulWidget {
+  const LogInScreen({Key? key, required this.showSignUpScreen}) : super(key: key);
+
+  final VoidCallback showSignUpScreen;
 
   @override
-  State<StatefulWidget> createState() => _LoginScreenState();
+  State<StatefulWidget> createState() => _LogInScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LogInScreenState extends State<LogInScreen> {
   // text controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -22,6 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   // dispose controllers for memory management
+  @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
@@ -87,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: const EdgeInsets.all(40),
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {signIn;},
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blueAccent, // Text Color
                   ),
@@ -104,11 +107,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
               // not a member? register now
               Row(
-                children: const <Widget>[
-                  Text('Not a member?'),
-                  Text(' Register now',
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.bold))
+                children: <Widget>[
+                  const Text('Not a member?'),
+                  GestureDetector(
+                    onTap: widget.showSignUpScreen,
+                    child: const Text(' Register now',
+                        style: TextStyle(
+                            color: Colors.red, fontWeight: FontWeight.bold)),
+                  )
                 ],
               )
             ],

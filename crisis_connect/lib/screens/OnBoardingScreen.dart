@@ -1,4 +1,5 @@
 import 'package:crisis_connect/models/OnBoardingModel.dart';
+import 'package:crisis_connect/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -48,7 +49,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         style: const TextStyle(
                           fontSize: 18.0,
                           color: Colors.grey,
-
                         ),
                         textAlign: TextAlign.center,
                       )
@@ -63,7 +63,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 contents.length,
-                    (index) => buildDot(index, context),
+                (index) => buildDot(index, context),
               ),
             ),
           ),
@@ -73,7 +73,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               width: double.infinity,
               child: TextButton(
                 onPressed: () {
-                  if (currentIndex == contents.length - 1) {}
+                  if (currentIndex == contents.length - 1) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const HomeScreen(),
+                      ),
+                    );
+                  }
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 100),
                       curve: Curves.bounceIn);
@@ -81,10 +88,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blueAccent, // Text Color
                 ),
-                child: Text(currentIndex == contents.length - 1
-                    ? "Get Started"
-                    : "Next", style: const TextStyle(color: Colors.white),),
-
+                child: Text(
+                  currentIndex == contents.length - 1 ? "Get Started" : "Next",
+                  style: const TextStyle(color: Colors.white),
+                ),
               )),
         ],
       ),

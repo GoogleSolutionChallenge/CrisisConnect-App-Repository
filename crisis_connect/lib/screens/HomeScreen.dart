@@ -1,17 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
-  final String title;
+  @override
+  State<StatefulWidget> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-      ),
-      body: const Center(
-        child: Text('Home'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('signed in as ${user.email}'),
+            Container(
+              height: 45,
+              margin: const EdgeInsets.all(40),
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.red, // Text Color
+                ),
+                child: const Text("sign out"),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

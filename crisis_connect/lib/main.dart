@@ -1,4 +1,5 @@
 
+import 'package:crisis_connect/screens/OnBoardingScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import './screens/HomeScreen.dart';
@@ -25,7 +26,7 @@ class CrisisConnect extends StatelessWidget {
         body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: FormScreen(),
+            child: Text('ini'),
           ),
         ),
       ),

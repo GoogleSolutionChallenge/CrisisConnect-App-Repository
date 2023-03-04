@@ -1,80 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:location/location.dart' show Location, LocationData;
 
-class MapScreen extends StatefulWidget {
-  const MapScreen({Key? key}) : super(key: key);
-
+class MyHomePage extends StatefulWidget {
   @override
-  State<MapScreen> createState() => _MyAppState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class Location {
-  Future<Position> getCurrentLocation() async {
-    return await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
+class _MyHomePageState extends State<MyHomePage> {
+
+  LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
+  late GoogleMapController _controller;
+  Location _location = Location();
+
+  void _onMapCreated(GoogleMapController _cntlr)
+  {
+    _controller = _cntlr;
+    _location.onLocationChanged.listen((LocationData l) {
+      _controller.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(target: LatLng(l.latitude!, l.longitude!),zoom: 15),
+        ),
+      );
+    });
   }
 
-  Future<CameraPosition> getLocation() async {
-    Position position = await getCurrentLocation();
-    return CameraPosition(
-      target: LatLng(position.latitude, position.longitude),
-      zoom: 10.0,
-    );
-  }
-
-  Future<double> getLatitude() async {
-    Position position = await getCurrentLocation();
-    return position.latitude;
-  }
-
-  Future<double> getLongitude() async {
-    Position position = await getCurrentLocation();
-    return position.longitude;
-  }
-}
-
-class _MyAppState extends State<MapScreen> {
-  late GoogleMapController mapController;
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
-
-  late Future<CameraPosition> _location;
-
-  @override
-  initState() {
-    super.initState();
-    _location = Location().getLocation();
-  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.green[700],
+    return Scaffold(
+      appBar: AppBar(
+          title: Text("Map"),
+          centerTitle: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Maps Sample App'),
-          elevation: 2,
-        ),
-        body: FutureBuilder<CameraPosition>(
-          future: _location,
-          builder: (BuildContext context,
-              AsyncSnapshot<CameraPosition> snapshot) {
-            if (snapshot.hasData) {
-              return GoogleMap(
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: snapshot.data!,
-              );
-            } else {
-              return Center(child: CircularProgressIndicator());
-            }
-          },
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Stack(
+          children: [
+            GoogleMap(
+              initialCameraPosition: CameraPosition(target: _initialcameraposition),
+              mapType: MapType.normal,
+              onMapCreated: _onMapCreated,
+              myLocationEnabled: true,
+            ),
+          ],
         ),
       ),
     );

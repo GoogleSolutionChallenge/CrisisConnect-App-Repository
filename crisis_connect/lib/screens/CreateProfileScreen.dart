@@ -314,12 +314,12 @@ class CreateProfile extends State<FormScreen> {
   late Future<double> _latitude;
   late Future<double> _longitude;
 
-  @override
-  initState() {
-    super.initState();
-    _latitude = Location().getLatitude();
-    _longitude = Location().getLongitude();
-  }
+  // @override
+  // initState() {
+  //   super.initState();
+  //   _latitude = Location().getLatitude();
+  //   _longitude = Location().getLongitude();
+  // }
 
   @override
   Widget build(BuildContext context) {

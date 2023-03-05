@@ -3,7 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class LogInScreen extends StatefulWidget {
-  const LogInScreen({Key? key, required this.showSignUpScreen}) : super(key: key);
+  const LogInScreen({Key? key, required this.showSignUpScreen})
+      : super(key: key);
 
   final VoidCallback showSignUpScreen;
 
@@ -34,93 +35,105 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              // email
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white10),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: TextField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(
-                        border: InputBorder.none, hintText: 'Enter your email'),
-                  ),
-                ),
-              ),
-
-              const SizedBox(
-                height: 15,
-              ),
-
-              // password
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white10),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: TextField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: const InputDecoration(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                // email
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: TextField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Enter your password'),
+                        hintText: 'Enter your email',
+                      ),
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(
-                height: 20,
-              ),
-
-              // sign-in button
-              Container(
-                height: 45,
-                margin: const EdgeInsets.all(40),
-                width: double.infinity,
-                child: TextButton(
-                  onPressed: () {signIn;},
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blueAccent, // Text Color
-                  ),
-                  child: const Text(
-                    'Sign In',
-                    style: TextStyle(color: Colors.white),
+                // password
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: TextField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Enter your password',
+                      ),
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(
-                height: 15,
-              ),
 
-              // not a member? register now
-              Row(
-                children: <Widget>[
-                  const Text('Not a member?'),
-                  GestureDetector(
-                    onTap: widget.showSignUpScreen,
-                    child: const Text(' Register now',
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.bold)),
-                  )
-                ],
-              )
-            ],
+                // sign-in button
+                Container(
+                  height: 45,
+                  margin: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () {
+                      signIn;
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.blueAccent, // Text Color
+                    ),
+                    child: const Text(
+                      'Sign In',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+
+                // not a member? register now
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text('Not a member?'),
+                    GestureDetector(
+                      onTap: widget.showSignUpScreen,
+                      child: const Text(' Register now',
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold)),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
-    ),);
+    );
   }
 }

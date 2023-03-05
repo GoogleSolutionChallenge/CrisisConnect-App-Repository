@@ -34,7 +34,8 @@ class _SignUpScreen extends State<SignUpScreen> {
   }
 
   bool passwordConfirmed() {
-    return _confirmPasswordController.text.trim() == _passwordController.text.trim();
+    return _confirmPasswordController.text.trim() ==
+        _passwordController.text.trim();
   }
 
   @override
@@ -46,31 +47,40 @@ class _SignUpScreen extends State<SignUpScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                // Hello there
+                // Welcome message
                 const Text(
-                  'Hello there',
-                  style: TextStyle(fontSize: 52),
+                  'Welcome',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
-
                 const SizedBox(
-                  height: 10.0,
+                  height: 5.0,
                 ),
-
-                const Text('Register below with your details',
-                    style: TextStyle(
-                      fontSize: 18,
-                    )),
+                const Text(
+                  'Register below with your details',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
 
                 const SizedBox(height: 40),
 
                 // email
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
                       borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
                     child: TextField(
                       controller: _emailController,
@@ -81,18 +91,23 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 15,
-                ),
-
                 // password
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
                       borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                          const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
                     child: TextField(
                       controller: _passwordController,
@@ -104,18 +119,23 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 15,
-                ),
-
                 // confirm password
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
                       borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                          const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
                     child: TextField(
                       controller: _confirmPasswordController,
@@ -127,17 +147,16 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 20,
-                ),
 
                 // sign-in button
                 Container(
                   height: 45,
-                  margin: const EdgeInsets.all(40),
+                  margin: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {signUp;},
+                    onPressed: () {
+                      signUp;
+                    },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.blueAccent, // Text Color
                     ),
@@ -148,12 +167,10 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 15,
-                ),
 
                 // not a member? register now
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     const Text('Already have an account?'),
                     GestureDetector(

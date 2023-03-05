@@ -100,7 +100,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 // sign-in button
                 Container(
                   height: 45,
-                  margin: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+                  margin: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {

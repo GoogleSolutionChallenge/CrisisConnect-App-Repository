@@ -47,7 +47,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
@@ -74,7 +74,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
@@ -96,16 +96,13 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
 
-
                 // sign-in button
                 Container(
                   height: 45,
                   margin: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {
-                      signIn;
-                    },
+                    onPressed: () => {signIn()},
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.blueAccent, // Text Color
                     ),

@@ -71,7 +71,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
@@ -98,14 +98,14 @@ class _SignUpScreen extends State<SignUpScreen> {
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 7,
                           offset:
-                          const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -126,14 +126,14 @@ class _SignUpScreen extends State<SignUpScreen> {
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       border: Border.all(color: Colors.white10),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 7,
                           offset:
-                          const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -147,16 +147,13 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-
                 // sign-in button
                 Container(
                   height: 45,
                   margin: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {
-                      signUp;
-                    },
+                    onPressed: () => {signUp()},
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.blueAccent, // Text Color
                     ),
@@ -167,7 +164,6 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
 
-
                 // not a member? register now
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -175,7 +171,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     const Text('Already have an account?'),
                     GestureDetector(
                       onTap: widget.showLogInScreen,
-                      child: const Text('Log In',
+                      child: const Text(' Log In',
                           style: TextStyle(
                               color: Colors.red, fontWeight: FontWeight.bold)),
                     )

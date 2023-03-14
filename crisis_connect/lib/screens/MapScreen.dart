@@ -5,6 +5,8 @@ import 'package:location/location.dart' as location;
 import 'package:location/location.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

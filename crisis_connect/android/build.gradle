@@ -1,3 +1,5 @@
+apply plugin: 'com.android.application'
+
 buildscript {
     ext.kotlin_version = '1.6.10'
     repositories {
@@ -26,10 +28,9 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
 android {
-    compileSdkVersion 31
+    defaultConfig {
+        minSdkVersion 19
+        compileSdkVersion 31
+    }
 }

@@ -1,8 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart' as places;
 import 'package:location/location.dart' as location;
 import 'package:location/location.dart';
+
+// adding a marker to the user location
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+import 'dart:async';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -18,41 +25,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final location.Location _location = location.Location();
 
-  Set<Marker> _markers = {};
+  late double _latitude = 53.5461;
+
+  late double _longitude = 113.4937;
+
+  late final Map<String, Marker> _markers = {};
+
   final places.GoogleMapsPlaces _places = places.GoogleMapsPlaces(apiKey: 'AIzaSyA7guPDiP0D6f8QD-gm-Oxc-mOLVcDpijQ');
 
-  void _onMapCreated(GoogleMapController _cntlr)
-  {
+  void _onMapCreated(GoogleMapController _cntlr) {
     _controller = _cntlr;
     _location.onLocationChanged.listen((location.LocationData l) {
+      _latitude = l.latitude!;
+      _longitude = l.longitude!;
       _controller.animateCamera(
         CameraUpdate.newCameraPosition(
-          CameraPosition(target: LatLng(l.latitude!, l.longitude!),zoom: 15),
+          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 15),
         ),
       );
-    });
-  }
-
-  Future<void> _performSearch(String query) async {
-    final LocationData location = await _location.getLocation();
-    final places.PlacesSearchResponse result = await _places.searchByText(query, location: places.Location(lat: location.latitude!, lng: location.longitude!));
-
-    if (result.status == "OK") {
-      // Create markers for each hospital result
-      final markers = result.results.map((place) => Marker(
-        markerId: MarkerId(place.id!),
-        position: LatLng(place.geometry?.location.lat ?? 0, place.geometry?.location.lng ?? 0),
-        infoWindow: InfoWindow(title: place.name ?? ''),
-      ));
-
-
-      // Update map markers with search results
       setState(() {
-        _markers = Set<Marker>.of(markers);
+        final marker = Marker(
+          markerId: const MarkerId("Current Location"),
+          position: LatLng(_latitude, _longitude),
+          infoWindow: const InfoWindow(
+            title: "Your Current Location",
+          ),
+        );
+        _markers["Current Location"] = marker;
       });
-    } else {
-      print("Error: ${result.errorMessage}");
-    }
+    });
   }
 
   @override
@@ -70,9 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
             GoogleMap(
               initialCameraPosition: CameraPosition(target: _initialcameraposition, zoom: 14),
               mapType: MapType.normal,
-              onMapCreated: _onMapCreated,
               myLocationEnabled: true,
-              markers: _markers,
+              markers: _markers.values.toSet(),
+              onMapCreated: _onMapCreated,
             ),
           ],
         ),

@@ -1,17 +1,17 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import './screens/HomeScreen.dart';
-import './screens/CreateProfileScreen.dart';
-import './screens/EditProfileScreen.dart';
 import 'firebase_options.dart';
-import './screens/MapScreen.dart';
+import 'screens/MainScreen.dart';
+import 'screens/Auth.dart';
 
-Future<void> main() async {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const CrisisConnect());
+
+  runApp(CrisisConnect());
 }
 
 class CrisisConnect extends StatelessWidget {
@@ -25,7 +25,7 @@ class CrisisConnect extends StatelessWidget {
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: MyHomePage(),
+            child: MainScreen(),
           ),
         ),
       ),

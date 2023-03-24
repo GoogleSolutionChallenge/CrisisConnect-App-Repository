@@ -1,4 +1,6 @@
 
+import 'package:crisis_connect/screens/HomeScreen.dart';
+import 'package:crisis_connect/screens/MapScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -25,7 +27,7 @@ class CrisisConnect extends StatelessWidget {
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: MainScreen(),
+            child: MyHomePage(),
           ),
         ),
       ),

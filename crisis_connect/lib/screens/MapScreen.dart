@@ -180,9 +180,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ElevatedButton(
                       onPressed: () async {
                         clearMarkers();
-                        await findLocation('Police');
+                        await findLocation('Police Station');
                       },
-                      child: Text('Police'),
+                      child: Text('Police Station'),
                     ),
                   ),
                 ),

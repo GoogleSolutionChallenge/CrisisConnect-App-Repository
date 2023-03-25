@@ -75,20 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       for (int i = 0; i < DataForCoordinates.length; i++) {
         Map<String, dynamic> data = json.decode(DataForCoordinates[i]);
-        //print(data);
+        print(data);
         LatLng coordinates = LatLng(
             data["results"][0]["geometry"]["location"]["lat"],
             data["results"][0]["geometry"]["location"]["lng"]);
         String location_address = list_hospitals[i];
 
         final marker = Marker(
-          markerId: MarkerId("Current Location$i"),
+          markerId: MarkerId("$type$i"),
           position: coordinates,
           infoWindow: InfoWindow(
             title: location_address,
           ),
         );
-        _markers["Current Location$i"] = marker;
+        _markers["$type$i"] = marker;
       }
     });
 
@@ -124,6 +124,20 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  void clearMarkers() {
+    _markers.clear();
+    setState(() {
+      final marker = Marker(
+        markerId: const MarkerId("Current Location"),
+        position: LatLng(_latitude, _longitude),
+        infoWindow: const InfoWindow(
+          title: "Your Current Location",
+        ),
+      );
+      _markers["Current Location"] = marker;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,31 +160,45 @@ class _MyHomePageState extends State<MyHomePage> {
               markers: _markers.values.toSet(),
               onMapCreated: _onMapCreated,
             ),
-            Positioned(
-              top: 16,
-              left: 16,
-              child: Container(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    await findLocation('hospitals');
-                  },
-                  child: Text('Hospitals'),
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        clearMarkers();
+                        await findLocation('Hospital');
+                      },
+                      child: Text('Hospitals'),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Positioned(
-              top: 16,
-              left: 60,
-              child: Container(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    await findLocation('police');
-                  },
-                  child: Text('Police'),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        clearMarkers();
+                        await findLocation('Police');
+                      },
+                      child: Text('Police'),
+                    ),
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        clearMarkers();
+                        await findLocation('Fire Station');
+                      },
+                      child: Text('Fire Station'),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         )

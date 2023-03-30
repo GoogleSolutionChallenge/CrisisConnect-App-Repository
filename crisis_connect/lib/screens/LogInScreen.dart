@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'CreateProfileScreen.dart';
+import 'MapScreen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key, required this.showSignUpScreen})
@@ -43,6 +44,15 @@ class _LogInScreenState extends State<LogInScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Container(
+                  width: 300,
+                  height: 300,
+                  child: Image.asset(
+                      'assets/crisis_connect_logo.PNG',
+                      fit: BoxFit.contain
+                  ),
+
+                ),
                 // email
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -104,7 +114,12 @@ class _LogInScreenState extends State<LogInScreen> {
                   margin: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () => {signIn()},
+                    onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MyHomePage()),
+                      )
+                    },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.blueAccent, // Text Color
                     ),

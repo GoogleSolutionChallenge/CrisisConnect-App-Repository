@@ -170,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         clearMarkers();
                         await findLocation('Hospital');
                       },
-                      child: Text('Hospitals'),
+                      child: Text('Hospital'),
                     ),
                   ),
                 ),
@@ -195,6 +195,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         await findLocation('Fire Station');
                       },
                       child: Text('Fire Station'),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        clearMarkers();
+                        await findLocation('Food Bank');
+                      },
+                      child: Text('Food Bank'),
                     ),
                   ),
                 ),

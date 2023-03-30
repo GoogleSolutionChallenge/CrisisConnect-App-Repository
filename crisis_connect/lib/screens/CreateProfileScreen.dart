@@ -311,16 +311,6 @@ class CreateProfile extends State<FormScreen> {
     );
   }
 
-  late Future<double> _latitude;
-  late Future<double> _longitude;
-
-  // @override
-  // initState() {
-  //   super.initState();
-  //   _latitude = Location().getLatitude();
-  //   _longitude = Location().getLongitude();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -331,6 +321,7 @@ class CreateProfile extends State<FormScreen> {
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             // Handle menu button press
+            Navigator.pop(context);
           },
         )
       ),
@@ -364,36 +355,6 @@ class CreateProfile extends State<FormScreen> {
                 SizedBox(height: 10),
                 _buildEmergencyPhoneNumber(),
                 SizedBox(height: 10),
-                // FutureBuilder<double>(
-                //   future: _latitude,
-                //   builder: (BuildContext context, AsyncSnapshot<double> snapshot) {
-                //     if (snapshot.connectionState == ConnectionState.waiting) {
-                //       return const Visibility(
-                //         visible: false,
-                //         child: CircularProgressIndicator(),
-                //       );
-                //     } else if (snapshot.hasError) {
-                //       return Text('Error: ${snapshot.error}');
-                //     } else {
-                //       return Text('Latitude: ${snapshot.data}');
-                //     }
-                //   },
-                // ),
-                // FutureBuilder<double>(
-                //   future: _longitude,
-                //   builder: (BuildContext context, AsyncSnapshot<double> snapshot) {
-                //     if (snapshot.connectionState == ConnectionState.waiting) {
-                //       return const Visibility(
-                //         visible: false,
-                //         child: CircularProgressIndicator(),
-                //       );
-                //     } else if (snapshot.hasError) {
-                //       return Text('Error: ${snapshot.error}');
-                //     } else {
-                //       return Text('Longitude: ${snapshot.data}');
-                //     }
-                //   },
-                // ),
                 ElevatedButton(
                   child: const Text(
                     'Create Account',

@@ -413,8 +413,6 @@ class CreateProfile extends State<FormScreen> {
                         'emergency_first_name': _emergencyFirstname,
                         'emergency_last_name': _emergencyLastname,
                         'emergency_phone_number': _emergencyPhoneNumber,
-                        // 'latitude': _latitude,
-                        // 'longitude': _longitude,
                       };
 
                       await db.collection('UserInfo').add(data);

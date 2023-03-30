@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'CreateProfileScreen.dart';
+
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key, required this.showSignUpScreen})
       : super(key: key);
@@ -119,7 +121,12 @@ class _LogInScreenState extends State<LogInScreen> {
                   children: <Widget>[
                     const Text('Not a member?'),
                     GestureDetector(
-                      onTap: widget.showSignUpScreen,
+                      onTap: () async {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const FormScreen()),
+                          );
+                        },
                       child: const Text(' Register now',
                           style: TextStyle(
                               color: Colors.red, fontWeight: FontWeight.bold)),

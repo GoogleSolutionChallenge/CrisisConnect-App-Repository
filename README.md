@@ -1,8 +1,13 @@
 # Crisis Connect Application Repository
+Crisis Connect is a comprehensive app designed to keep individuals informed, connected, and prepared during natural disasters. With a user-friendly map feature, the app enables users to easily locate essential services such as hospitals, fire stations, and food banks. Future updates will include educational videos on disaster preparedness and real-time alerts, making Crisis Connect an indispensable resource during emergencies.
 
-Crisis Connect is an app designed to help people stay informed and connected during natural disasters. The app's map feature also allows users to locate essential services such as hospitals, fire stations, and food banks. In the future, Crisis Connect plans to add educational videos on how to stay safe during natural disasters, making it an even more valuable resource. We also plan to add real-time alerts so that users can receive important information about natural disasters in their area. The app was created with the goal of helping people be better prepared and informed during times of crisis.
+In summary, Crisis Connect is a vital support application that empowers those affected by natural disasters with crucial information, resources, and assistance during trying times.
 
-In short, a Crisis Connect is a help and support application that can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during challenging times.
+Prompted by the devastating earthquakes in Turkey earlier this year, our team of computer science and engineering experts set out to create innovative solutions to help mitigate the impact of natural disasters on communities worldwide. As climate change continues to intensify, the frequency of such disasters is anticipated to increase, further highlighting the need for modern solutions to these modern problems.
+
+Although academic responsibilities have temporarily slowed our progress, our vision for Crisis Connect incorporates several essential features, such as an emergency alert system to keep users informed during crises. In future updates, we aim to broaden our database to deliver vital emergency information to people globally, and to implement features that facilitate communication between users and their emergency contacts, ensuring seamless connections with loved ones during distressing situations.
+
+Leveraging data from the United Nations Office for the Coordination of Humanitarian Affairs ReliefWeb API, our database continually consolidates critical emergency alert information from government agencies and international sources worldwide. This approach ensures that Crisis Connect provides comprehensive and up-to-date insights into global emergencies, offering users unparalleled access to essential information.
 
 ## How to run Crisis Connect
 

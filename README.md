@@ -54,6 +54,10 @@ After clicking on the Food Bank button, we get the locations of all the food ban
 This is a small snapshot of our emergency alert database that is refreshed every five minutes via cloud functions. We hope to integrate this data into a real time alert feature:
 
 
+This is the layout of the mobile application:
+
+
+
 ## Figma Mobile Template:
 - [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)
 - [https://www.figma.com/community/file/936170226770702647](https://www.figma.com/community/file/936170226770702647)

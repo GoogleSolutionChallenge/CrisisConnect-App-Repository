@@ -4,8 +4,31 @@ Crisis Connect is an app designed to help people stay informed and connected dur
 
 In short, a Crisis Connect is a help and support application that can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during challenging times.
 
-## How to run Crisis Connect:
+## How to run Crisis Connect
 First, you will need to have Flutter and your choice of Android Studio or Visual Studio installed in order to run the application. Then, you will need to download the Flutter and Dart Plugins. Then, you can run "flutter doctor" to make sure Flutter is installed correctly. Afterwards, you will be able to clone the git repository and naviate to the Flutter application "crisis-connect" which will allow you to run the application.
+
+## Images
+
+Sign in screen:
+![image](https://user-images.githubusercontent.com/90366819/229123634-10981016-fab1-4621-847b-70fbd643a6a6.png)
+
+Create an account screen:
+![image](https://user-images.githubusercontent.com/90366819/229123690-43d77c0b-82bb-4e15-874f-ffe446dd3c40.png)
+
+Map screen prompting user to allow location:
+![image](https://user-images.githubusercontent.com/90366819/229123804-69a2ee00-cc6a-47b0-af7f-d08aaebfd513.png)
+
+After clicking on the Hospital button, we get the locations of all the hospitals on the map:
+![image](https://user-images.githubusercontent.com/90366819/229123937-74b57078-8f25-489c-815a-816659d68f4d.png)
+
+After clicking on the Police Station button, we get the locations of all the police stations on the map:
+![image](https://user-images.githubusercontent.com/90366819/229124497-358a2a8d-cfd7-4b52-8502-4eb17cbd4a53.png)
+
+After clicking on the Fire Station button, we get the locations of all the fire stations on the map:
+![image](https://user-images.githubusercontent.com/90366819/229124340-45af42ed-e2a6-4f04-886e-c4b742e89dfd.png)
+
+After clicking on the Food Bank button, we get the locations of all the food banks on the map:
+![image](https://user-images.githubusercontent.com/90366819/229124701-fde1bdf9-274c-4994-9024-b7969696da43.png)
 
 ## Figma Mobile Template:
 - [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)

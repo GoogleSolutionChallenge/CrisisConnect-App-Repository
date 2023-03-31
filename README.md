@@ -3,7 +3,7 @@ Crisis Connect is a comprehensive, cross-platform flutter application designed t
 
 In summary, Crisis Connect is a vital support application that empowers those affected by natural disasters with crucial information, resources, and assistance during trying times.
 
-Prompted by the devastating earthquakes in Turkey earlier this year, our team of computer science and engineering students set out to create innovative solutions to help mitigate the impact of natural disasters on communities worldwide. As climate change continues to intensify, the frequency of such disasters is anticipated to increase, further highlighting the need for modern solutions to these modern problems.
+Prompted by the devastating earthquakes in Turkey earlier this year, our team of computer science and engineering students set out to create innovative solutions to help mitigate the impact of natural disasters on communities worldwide. As climate change continues to intensify, the frequency of such disasters is anticipated to increase, further highlighting the need for modern solutions to these modern issues.
 
 Although academic responsibilities have temporarily slowed our progress, our vision for Crisis Connect incorporates several essential features, such as an emergency alert system to keep users informed during crises. In future updates, we aim to broaden our database to deliver vital emergency information to people globally, and to implement features that facilitate communication between users and their emergency contacts, ensuring seamless connections with loved ones during distressing situations.
 
@@ -50,6 +50,8 @@ After clicking on the Fire Station button, we get the locations of all the fire 
 
 After clicking on the Food Bank button, we get the locations of all the food banks on the map:
 ![image](https://user-images.githubusercontent.com/90366819/229124701-fde1bdf9-274c-4994-9024-b7969696da43.png)
+
+This is a small snapshot of our emergency alert database that is refreshed every five minutes. We hope to integrate this data into a real time alert feature:
 
 
 ## Figma Mobile Template:

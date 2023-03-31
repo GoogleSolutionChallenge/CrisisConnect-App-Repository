@@ -5,7 +5,23 @@ Crisis Connect is an app designed to help people stay informed and connected dur
 In short, a Crisis Connect is a help and support application that can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during challenging times.
 
 ## How to run Crisis Connect
-First, you will need to have Flutter and your choice of Android Studio or Visual Studio installed in order to run the application. Then, you will need to download the Flutter and Dart Plugins. Then, you can run "flutter doctor" to make sure Flutter is installed correctly. Afterwards, you will be able to clone the git repository and naviate to the Flutter application "crisis-connect" which will allow you to run the application.
+
+Install Flutter and your preferred IDE:
+- Make sure you have Flutter and either Android Studio or Visual Studio Code installed on your computer.
+Download Flutter and Dart Plugins:
+
+Once your IDE is installed, you'll need to download the Flutter and Dart plugins. Check your IDE's documentation on how to do this.
+Verify Flutter installation:
+- Open a terminal or command prompt and run "flutter doctor" to verify that Flutter is installed correctly on your system.
+Clone the Git repository:
+
+Use Git to clone the repository to your local machine.
+Navigate to the application directory:
+- Open your IDE and navigate to the "crisis-connect" directory within the cloned repository.
+Run the application:
+
+Run the application from your IDE or by running the command "flutter run" in the terminal or command prompt.
+By following these steps, you should be able to run the "crisis-connect" Flutter application on your computer.
 
 ## Images
 
@@ -29,6 +45,7 @@ After clicking on the Fire Station button, we get the locations of all the fire 
 
 After clicking on the Food Bank button, we get the locations of all the food banks on the map:
 ![image](https://user-images.githubusercontent.com/90366819/229124701-fde1bdf9-274c-4994-9024-b7969696da43.png)
+
 
 ## Figma Mobile Template:
 - [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)

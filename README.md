@@ -1,36 +1,21 @@
-# CrisisConnect Application Repository
+# Crisis Connect Application Repository
 
-A natural disaster help and support application that provides critical information and resources to people impacted by natural disasters. Whether it's an earthquake, hurricane, wildfire, or any other natural disaster, the app can provide real-time updates on the situation, emergency contacts, shelter locations, and essential supplies such as food, water, and medical aid.
+Crisis Connect is an app designed to help people stay informed and connected during natural disasters. The app's map feature also allows users to locate essential services such as hospitals, fire stations, and food banks. In the future, Crisis Connect plans to add educational videos on how to stay safe during natural disasters, making it an even more valuable resource. We also plan to add real-time alerts so that users can receive important information about natural disasters in their area. The app was created with the goal of helping people be better prepared and informed during times of crisis.
 
-Moreover, the application also provides support to those affected by natural disasters, including counseling services, financial assistance, and volunteer opportunities. It enables users to connect with others affected by the same natural disaster, share their stories, and offer support to each other.
+In short, a Crisis Connect is a help and support application that can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during challenging times.
 
-In short, a natural disaster help and support application can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during these challenging times.
+## How to run Crisis Connect:
+First, 
 
-## Ideas
--   Good Health and Wellbeing: 
--   Share data with doctors
--   Video call with Doctors
--   Find doctors in vicinity 
--   Quality Education:
--   Connects you to free courses
--   Environmental:
--   Store data related to something you want to investigate
-- Natural Disaster (Climate Action or Sustainable Cities and Communities or Good Health and Wellbeing):
-	-   Emergency response advice - locations of food banks and alerts
-	-   Postings for non-profits organizations to coordinate donations
-
-## Functionalities
-- Link educational videos with general safety information
-- Search for essential services near you
-- Notifications alerting about the natural disaster
-- Store emergency contact info
-- Section with resources to help you stay calm (breathing exercises)
-- If a disaster is detected in the country set by the user, their current/last known location is sent to the database and relayed to their emergency contacts, along with other information such as their secondary emergency contacts, information about the disaster, etc.
+## Figma Mobile Template:
+- [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)
+- [https://www.figma.com/community/file/936170226770702647](https://www.figma.com/community/file/936170226770702647)
 
 ## Technologies
 -   Flutter
 -   Google Cloud Platform
 -   Firebase
+-   Google Maps API
 
 ## User Stories:
 - Make a profile with contact information and emergency contact(allow or decline collection of location) and language/country
@@ -39,7 +24,6 @@ In short, a natural disaster help and support application can make a significant
 - Contact emergency contacts
 - Contact emergency services
 - Get push notifications for danger alerts
-- Change UI color
 
 ## Map
 - See disasters in a specific areas
@@ -47,7 +31,7 @@ In short, a natural disaster help and support application can make a significant
 - Show weather 
 - Search for locations on the map
 
-## Education
+## Education (to be implemented)
 - Links to educational videos/resources
 - Search for videos
 - Coping Mechanisms & resources to help you stay calm
@@ -69,51 +53,3 @@ In short, a natural disaster help and support application can make a significant
 - Firebase cloud functions
 - Firebase Firestore
 - Google Cloud
-  
-
-## Figma Mobile Template:
-- [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)
-- [https://www.figma.com/community/file/936170226770702647](https://www.figma.com/community/file/936170226770702647)
-
-## Color Palette
-- #0085FF
-
-## Resources (citations):
-
-- [https://thenounproject.com/icon/earthquake-4762676/](https://thenounproject.com/icon/earthquake-4762676/)
-- [https://thenounproject.com/icon/natural-disasters-1674920/](https://thenounproject.com/icon/natural-disasters-1674920/)
-- [https://thenounproject.com/icon/volcano-1837025/](https://thenounproject.com/icon/volcano-1837025/)
-- [https://thenounproject.com/icon/mental-health-3306335/](https://thenounproject.com/icon/mental-health-3306335/)
-- [https://thenounproject.com/icon/natural-disasters-27832/](https://thenounproject.com/icon/natural-disasters-27832/)
-- [https://thenounproject.com/icon/natural-disasters-1674927/](https://thenounproject.com/icon/natural-disasters-1674927/)
-  
-## Application blurb: (thank you ChatGPT :p)
-
-A natural disaster help and support application provides critical information and resources to people impacted by natural disasters. Whether it's an earthquake, hurricane, wildfire, or any other natural disaster, the app can provide real-time updates on the situation, emergency contacts, shelter locations, and essential supplies such as food, water, and medical aid.
-
-Moreover, the application also provides support to those affected by natural disasters, including counseling services, financial assistance, and volunteer opportunities. It enables users to connect with others affected by the same natural disaster, share their stories, and offer support to each other.
-
-In short, a natural disaster help and support application can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during these challenging times.
-
-## Organization Name Ideas
-- Blaze Brigade
-- CrisisConnect Team
-
-## App Name Ideas
-- Proactive
-- LifeLine
-- __CrisisConnect__
-- ReliefNow
-- Protocol
-    
-## Organization email
-- [crisisconnectteam@gmail.com](mailto:crisisconnectteam@gmail.com)
-
-## Database Fields
-- Country
-- Date and time of disaster
-- Date and time disaster was created by upstream database
-- Description
-- Profile.key_content
-- Status
-- type

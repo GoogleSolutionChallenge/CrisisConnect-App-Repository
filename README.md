@@ -5,7 +5,7 @@ Crisis Connect is an app designed to help people stay informed and connected dur
 In short, a Crisis Connect is a help and support application that can make a significant difference in the lives of those impacted by natural disasters, providing them with essential information, resources, and support during challenging times.
 
 ## How to run Crisis Connect:
-First, 
+First, you will need to have Flutter and your choice of Android Studio or Visual Studio installed in order to run the application. Then, you will need to download the Flutter and Dart Plugins. Then, you can run "flutter doctor" to make sure Flutter is installed correctly. Afterwards, you will be able to clone the git repository and naviate to the Flutter application "crisis-connect" which will allow you to run the application.
 
 ## Figma Mobile Template:
 - [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)

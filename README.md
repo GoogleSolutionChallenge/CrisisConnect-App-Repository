@@ -1,5 +1,5 @@
 # Crisis Connect Application Repository
-Crisis Connect is a comprehensive app designed to keep individuals informed, connected, and prepared during natural disasters. With a user-friendly map feature, the app enables users to easily locate essential services such as hospitals, fire stations, and food banks. Future updates will include educational videos on disaster preparedness and real-time alerts, making Crisis Connect an indispensable resource during emergencies.
+Crisis Connect is a comprehensive, cross-platform flutter application designed to keep individuals informed, connected, and prepared during natural disasters. With a user-friendly map feature, the app enables users to easily locate essential services such as hospitals, fire stations, and food banks. Future updates will include educational videos on disaster preparedness and real-time alerts, making Crisis Connect an indispensable resource during emergencies.
 
 In summary, Crisis Connect is a vital support application that empowers those affected by natural disasters with crucial information, resources, and assistance during trying times.
 

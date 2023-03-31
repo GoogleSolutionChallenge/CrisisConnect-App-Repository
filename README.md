@@ -51,7 +51,7 @@ After clicking on the Fire Station button, we get the locations of all the fire 
 After clicking on the Food Bank button, we get the locations of all the food banks on the map:
 ![image](https://user-images.githubusercontent.com/90366819/229124701-fde1bdf9-274c-4994-9024-b7969696da43.png)
 
-This is a small snapshot of our emergency alert database that is refreshed every five minutes. We hope to integrate this data into a real time alert feature:
+This is a small snapshot of our emergency alert database that is refreshed every five minutes via cloud functions. We hope to integrate this data into a real time alert feature:
 
 
 ## Figma Mobile Template:

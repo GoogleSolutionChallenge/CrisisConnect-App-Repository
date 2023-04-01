@@ -52,15 +52,15 @@ After clicking on the Food Bank button, we get the locations of all the food ban
 ![image](https://user-images.githubusercontent.com/90366819/229124701-fde1bdf9-274c-4994-9024-b7969696da43.png)
 
 This is a small snapshot of our emergency alert database that is refreshed every five minutes via cloud functions. We hope to integrate this data into a real time alert feature:
-![image](https://user-images.githubusercontent.com/90366819/229316113-e41412b4-8bab-41f3-aeb2-c7a4246e3baf.png)
+![Screenshot_20230331_164146](https://user-images.githubusercontent.com/90366819/229316199-9cb7d475-3625-4480-89fc-2956fdf405c8.png)
+
 
 This is the layout of the mobile application:
-![image](https://user-images.githubusercontent.com/90366819/229316125-743d2220-f26c-497c-9b1b-a8598d5d6e32.png)
+![Screenshot_20230331_170040](https://user-images.githubusercontent.com/90366819/229316200-a4b19493-8eb2-4777-bffc-8debbc1e31e0.png)
 
 
 ## Figma Mobile Template:
-- [https://www.figma.com/community/file/1076609425686201098](https://www.figma.com/community/file/1076609425686201098)
-- [https://www.figma.com/community/file/936170226770702647](https://www.figma.com/community/file/936170226770702647)
+- https://www.figma.com/file/vqT0dYIKiAdcIbf8X3K8vM/App-Template?node-id=0-1&t=7bB6kZsx8sYTSsFu-0
 
 ## Technologies
 -   Flutter
